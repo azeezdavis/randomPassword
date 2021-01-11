@@ -1,13 +1,44 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
-let length
+let lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let upperCase = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+let specialChar =["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", ";", "<", ">", "?", "/"]
+// ask why this doesnt run
+// let caseSense = lowerCase.split(" ");
+
+function generatePassword () {
+  let length = prompt ("Choose a password with characters bewteen 8 and 128");
+  let charSet = "";
+  
+  if (length <8 || length >128){
+  
+    alert("You did not choose a valid number ");
+    
+  }
+  else {
+    let lowercase = confirm ("do you want to have lowercase?");
+  }
+}
+//   if( charType.toLowerCase === "lowercase" ) {
+//     charSet = "abcdefghijklmnopqrstuvwxyz";
+//   } else if( charType.toLowerCase === "uppercase" ) {
+//     charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   } else if( charType.toLowerCase === "numeric" ) {
+//     charSet = "0123456789";
+//   } else if( charType.toLowerCase === "special" ) {
+//     charSet = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+// }
+
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
+  
+  
 
   passwordText.value = password;
+
 
 }
 
