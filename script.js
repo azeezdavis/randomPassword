@@ -11,11 +11,12 @@ let userInput = [ ]
 
 function generatePassword () {
   let length = prompt ("Choose a password with characters bewteen 8 and 128");
+ 
   let charSet = "";
   
-  if (length <8 || length >128){
+  if (length <8 || length >128) {
   
-    alert("You did not choose a valid number ");
+    alert("You did not choose a valid number");
     
   }
   else {
@@ -24,37 +25,32 @@ function generatePassword () {
     if (userInputLower) {
      userInput = userInput.concat(lowerCase)
     }
-    let userInputUpper = confirm("do you want to have uppercase?");
+    let userInputUpper= confirm ("do you want to have uppercase?");
     
     if (userInputUpper){
-      userInputUpper = userInputUpper.concat(upperCase)
+      userInput = userInput.concat(upperCase)
     }
     let userInputSpecialChar = confirm("do you want special characters?");
 
-  if (userInputSpecialChar) { userInputSpecialChar = userInputSpecialChar.concat(specialChar)
+  if (userInputSpecialChar) { userInput = userInput.concat(specialChar)
   
   }
-  let num = userinputNum = confirm("do you want numbers?");
+  let userinputNum = confirm("do you want numbers?");
   
-  if (userinputNum) { userinputNum =userinputNum.concat(num)
+  if (userinputNum) { userInput = userInput.concat(num)
   
+   console.log(userInput)
   }
-  
-} 
-
+   
+  } 
+for (i = 0; i < length; i++){
+  let count = Math.floor(Math.random() * userInput.length);
+  charSet += userInput[count] + "";
+  console.log(charSet)
+  }
+  return charSet;
 }
 
-
-
-//   if( charType.toLowerCase === "lowercase" ) {
-//     charSet = "abcdefghijklmnopqrstuvwxyz";
-//   } else if( charType.toLowerCase === "uppercase" ) {
-//     charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   } else if( charType.toLowerCase === "numeric" ) {
-//     charSet = "0123456789";
-//   } else if( charType.toLowerCase === "special" ) {
-//     charSet = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-// }
 
 
 // Write password to the #password input
